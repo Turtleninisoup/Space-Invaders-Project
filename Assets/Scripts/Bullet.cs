@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
     {
       myRigidbody2D = GetComponent<Rigidbody2D>();
       Fire();
+        Debug.Log("Sart");
     }
 
     // Update is called once per frame
@@ -20,5 +21,14 @@ public class Bullet : MonoBehaviour
     {
       myRigidbody2D.velocity = Vector2.up * speed; 
       Debug.Log("Wwweeeeee");
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.name == "Enemy")
+        {
+            Destroy(gameObject);
+            Debug.Log("A HIT!");
+        }
     }
 }
