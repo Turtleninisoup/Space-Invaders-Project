@@ -23,10 +23,11 @@ public class Bullet : MonoBehaviour
       Debug.Log("Wwweeeeee");
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.name == "Enemy")
         {
+            Destroy(gameObject);
             Destroy(gameObject);
             Debug.Log("A HIT!");
         }
