@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-  public GameObject bullet;
+    public GameObject bullet;
 
-  public Transform shottingOffset;
+    public Transform shottingOffset;
 
     Rigidbody2D rbp;
 
@@ -35,14 +35,14 @@ public class Player : MonoBehaviour
         //***Player Movement***
         if (Input.GetAxis("PlayerCharacter") > 0)
         {
-            Vector3 lup = new Vector3(10, 0.0f, 0);
-            rbp.AddForce(lup, forceMode);
+            Vector3 right = new Vector3(10, 0.0f, 0);
+            rbp.AddForce(right, forceMode);
         }
 
         if (Input.GetAxis("PlayerCharacter") < 0)
         {
-            Vector3 ldown = new Vector3(-10, 0.0f, 0);
-            rbp.AddForce(ldown, forceMode);
+            Vector3 left = new Vector3(-10, 0.0f, 0);
+            rbp.AddForce(left, forceMode);
         }
 
         if (Input.GetAxis("PlayerCharacter") == 0)
