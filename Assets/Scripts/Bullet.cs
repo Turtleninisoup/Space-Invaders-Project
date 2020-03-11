@@ -25,9 +25,8 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.name == "Enemy")
+        if (other.gameObject.tag == "Enemy")
         {
-            Destroy(gameObject);
             Destroy(gameObject);
             Debug.Log("A HIT!");
         }

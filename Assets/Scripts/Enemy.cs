@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     //Variables
     Score score;
+    public int worth;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,7 @@ public class Enemy : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
-        score.setScore(score.getScore() + 1);
+        score.setScore(score.getScore() + worth);
         Debug.Log("Ouch!");
     }
 }

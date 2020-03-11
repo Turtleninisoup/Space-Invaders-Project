@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //Variables
     public GameObject bullet;
 
     public Transform shottingOffset;
