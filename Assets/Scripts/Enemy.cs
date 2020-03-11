@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
             Destroy(col.gameObject);
             Destroy(gameObject);
             score.setScore(score.getScore() + worth);
-            Debug.Log("Ouch!");
+            speed = speed + 0.1f;
         }
 
         if (col.gameObject.tag == "Shield")
