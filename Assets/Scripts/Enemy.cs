@@ -9,10 +9,12 @@ public class Enemy : MonoBehaviour
     public int worth;
     float speed = 1;
     bool moveRight = true;
-    double lbounds = -7.5;
-    double rbounds = 7.5;
+    double lbounds = -7.7;
+    double rbounds = 7.7;
     Vector3 moveDown = new Vector3(0f, -0.5f, 0f);
     public Transform transform;
+    public GameObject bullet;
+    public Transform shottingOffset;
 
     // Start is called before the first frame update
     void Start()
@@ -27,17 +29,33 @@ public class Enemy : MonoBehaviour
         {
             moveRight = !moveRight;
             DownMovement();
-            print("Switching directions; now moving " + (moveRight ? "Right" : "Left"));
         }
         Movement(moveRight);
+
     }
 
     //Method for shooting enemy
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        Destroy(gameObject);
-        score.setScore(score.getScore() + worth);
-        Debug.Log("Ouch!");
+        if (col.gameObject.tag == "Bullet")
+        {
+            Destroy(col.gameObject);
+            Destroy(gameObject);
+            score.setScore(score.getScore() + worth);
+            Debug.Log("Ouch!");
+        }
+
+        if (col.gameObject.tag == "Shield")
+        {
+            Destroy(col.gameObject);
+            Destroy(gameObject);
+        }
+    }
+
+    public void shootshoot()
+    {
+        GameObject shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
+        Destroy(shot, 3f);
     }
 
     //Movement methods

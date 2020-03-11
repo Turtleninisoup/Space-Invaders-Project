@@ -52,4 +52,16 @@ public class Player : MonoBehaviour
         }
         //***End Player Movement***
     }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "EnemyBullet")
+        {
+            Destroy(col.gameObject);
+            Destroy(gameObject);
+        }
+
+
+
+    }
 }
