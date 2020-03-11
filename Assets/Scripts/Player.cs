@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
         //***End Player Movement***
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "EnemyBullet")
         {
@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
         }
 
-
+        UnityEngine.SceneManagement.SceneManager.LoadScene("DeadScene");
 
     }
 }
