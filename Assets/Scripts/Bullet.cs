@@ -13,7 +13,6 @@ public class Bullet : MonoBehaviour
     {
       myRigidbody2D = GetComponent<Rigidbody2D>();
       Fire();
-        Debug.Log("Sart");
     }
 
     // Update is called once per frame
