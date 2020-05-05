@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Score : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class Score : MonoBehaviour
         {
             highScore = score;
         }
+
     }
 
     //Getter and setter
