@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
         }
 
-        UnityEngine.SceneManagement.SceneManager.LoadScene("DeadScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("EndScene");
 
     }
 }
